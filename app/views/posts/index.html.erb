@@ -1,0 +1,19 @@
+<div class="nihongo">
+
+ <% @posts.each do |post| %>
+ <p><%= post.title %></p>
+
+<h4 class="comment-open">コメント一覧</h4>
+<!-- コメント機能 -->
+<% post.comments.each do |comment| %>
+<div class="area">
+
+<p class="comment" style="display:none">
+<span>コメント：</span>
+<%= comment.text %></p>
+<% end %>
+</div>
+
+
+<% end %>
+</div>
