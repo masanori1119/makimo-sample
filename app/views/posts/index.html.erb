@@ -1,14 +1,14 @@
 <div class="nihongo">
 
- <% @posts.each do |post| %>
+ <% @posts.each_with_index do |post, index| %>
  <p><%= post.title %></p>
 
-<h4 class="comment-open">コメント一覧</h4>
+<h4 class="comment-open" data-post-id="<%= index %>">コメント一覧</h4>
 <!-- コメント機能 -->
-<% post.comments.each do |comment| %>
+<% post.comments.each.with_index do |comment| %>
 <div class="area">
 
-<p class="comment" style="display:none">
+<p class="comment-<%= index %>" style="display:none">
 <span>コメント：</span>
 <%= comment.text %></p>
 <% end %>
@@ -16,4 +16,14 @@
 
 
 <% end %>
+
+眠いです。
+
+<ul>
+  <li>
+ <%= render @posts %>
+  </li>
+</ul>
+
+
 </div>

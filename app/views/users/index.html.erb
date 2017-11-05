@@ -1,0 +1,12 @@
+<h1>ユーザー一覧</h1>
+
+
+<% @users.each do |user| %>
+  <%= user.name %>
+  <br>
+  <%= link_to("#{user.name}のページだよ。", user_path(user.id) ) %>
+  <br>
+<% end %>
+
+<li class="application-singe-li"><%= link_to "ログアウト", destroy_user_session_path, class: "application-singe-a", method: :delete %></li>
+
