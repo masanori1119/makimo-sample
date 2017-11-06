@@ -48,13 +48,9 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 
-
-
-
-
   production:
-  <<: *default
-  database: makimo-sample_production
-  username: root
-  password: <%= ENV['DATABASE_PASSWORD'] %>
-  socket: /var/lib/mysql/mysql.sock
+    <<: *default
+    database: makimo-sample_production
+    username: root
+    password: <%= ENV['DATABASE_PASSWORD'] %>
+    socket: /var/lib/mysql/mysql.sock
